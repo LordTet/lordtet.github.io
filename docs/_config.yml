@@ -28,7 +28,9 @@ twitter_username: lordtet
 github_username:  LordTet
 
 # Build settings
-theme: minima
+remote_theme: jekyll/minima
+minima:
+  skin: dark
 plugins:
   - jekyll-feed
 

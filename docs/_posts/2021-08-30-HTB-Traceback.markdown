@@ -11,6 +11,9 @@ categories: [htb, recap, writeup]
 
 This was one of my first boxes, done when I first tried HTB as a platform. Traceback definitely has a special spot in my heart. `:)`
 
+Traceback is a beginner Linux-based box. It is now retired, so this writeup can be read publicly.
+
+
 Getting straight to business, after the obligatory ping to see that everything is working, we launch an nmap scan while we go check out port 80 for some recon.
 
 ![nmap scan](/assets/Traceback/nmap.png)

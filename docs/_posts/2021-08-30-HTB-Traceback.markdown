@@ -9,7 +9,7 @@ categories: [htb, recap, writeup]
 
 
 
-This was one of my first boxes, done when I first tried HTB as a platform. Traceback definitely has a special spot in my heart. :)
+This was one of my first boxes, done when I first tried HTB as a platform. Traceback definitely has a special spot in my heart. `:)`
 
 Getting straight to business, after the obligatory ping to see that everything is working, we launch an nmap scan while we go check out port 80 for some recon.
 
@@ -47,7 +47,9 @@ Okay great, now all we need to do is use Lua's `os.execute()` to give us a shell
 
 ![User flag](/assets/Traceback/userflag.png)
 
-First things first, we set up shop by putting our ssh key into this user's authorized keys, for some persistence (it's an easy box, I don't need to fly under any radars). Not going to supply a screenshot for this because it's nothing special.
+And that's the user flag.
+
+Next, we set up shop by putting our ssh key into this user's authorized keys, for some persistence (it's an easy box, I don't need to fly under any radars). Not going to supply a screenshot for this because it's nothing special.
 
 Now, we get root. The astute may have noticed that the motd is changed on the box as well, and we know that those are scripts that are run on login. `uname -a` reveals that we are on an Ubuntu machine, and we know that modern Ubuntu machines store the motd in `/etc/update-motd.d/`
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "Recap: HTB Traceback"
 date:   2021-08-30
-categories: htb recap writeup
+categories: [htb, recap, writeup]
 ---
 
 **NOTE:** This is a writeup of a box I have previously done (thus the "Recap"). Therefore, this post will be straightforward and to the point on how this box was solved. For a more realistic view of my process, try a non-recap writeup!

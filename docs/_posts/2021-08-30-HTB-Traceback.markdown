@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Recap: HTB Traceback"
-date:   2021-08-27
+date:   2021-08-30
 categories: htb recap writeup
 ---
 

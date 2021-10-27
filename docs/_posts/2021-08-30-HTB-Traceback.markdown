@@ -1,18 +1,16 @@
 ---
 layout: post
-title:  "Recap: HTB Traceback"
+title:  "Writeup: HTB Traceback"
 date:   2021-08-30
-categories: [htb, recap, writeup]
+categories: [htb, writeup]
 ---
 
-**NOTE:** This is a writeup of a box I have previously done (thus the "Recap"). Therefore, this post will be straightforward and to the point on how this box was solved. For a more realistic view of my process, try a non-recap writeup!
 
+## Introduction
 
+Traceback is a retired beginner Linux-based box. It was also one of my first boxes on the platform, sufficiently easy for my lack of skills at the time. It taught me about the use of webshells, had a simple lateral movement, and had a pretty easy privilege escalation based on misconfigured permissions.
 
-This was one of my first boxes, done when I first tried HTB as a platform. Traceback definitely has a special spot in my heart. `:)`
-
-Traceback is a beginner Linux-based box. It is now retired, so this writeup can be read publicly.
-
+## Foothold
 
 Getting straight to business, after the obligatory ping to see that everything is working, we launch an nmap scan while we go check out port 80 for some recon.
 
@@ -40,21 +38,26 @@ Not the simplest nor prettiest webshell, but it's a foothold. Let's get a "real"
 
 ![SSH session established](/assets/Traceback/webadmin.png)
 
+## Account No. 2
+
 Okay great. A quick `ls` tells us that there is no flag here, so we'll need to move laterally. Additionally, there is a note here. What could that tool to practice lua be?
 
-So we run through some of the quick essentials and our user has permission to run a program called "luvit" as sysadmin. Let's just use sudo to run it, and it's... a lua intepreter. The tool to practice lua.
+So we run through some of the quick essentials and our user has permission to run a program called `luvit` as sysadmin. Let's just use `sudo` to run it, and it's... a lua intepreter. The tool to practice lua.
 
 ![lua interpreter](/assets/Traceback/sudo_l.png)
 
 Okay great, now all we need to do is use Lua's `os.execute()` to give us a shell, and probably the flag aswell.
 
+
 ![User flag](/assets/Traceback/userflag.png)
 
 And that's the user flag.
 
-Next, we set up shop by putting our ssh key into this user's authorized keys, for some persistence (it's an easy box, I don't need to fly under any radars). Not going to supply a screenshot for this because it's nothing special.
+We wrap this part up by putting our ssh key into this user's authorized keys, for some persistence (it's an easy box, I don't need to fly under any radars). Not going to supply a screenshot for this because it's nothing special.
 
-Now, we get root. The astute may have noticed that the motd is changed on the box as well, and we know that those are scripts that are run on login. `uname -a` reveals that we are on an Ubuntu machine, and we know that modern Ubuntu machines store the motd in `/etc/update-motd.d/`
+## Root
+
+Now, we get root. I noticed in the beginning that the motd is changed on the box as well, and we know that those are scripts that are run on login. `uname -a` reveals that we are on an Ubuntu machine, and we know that modern Ubuntu machines store the motd in `/etc/update-motd.d/`
 
 ![etc/update-motd.d](/assets/Traceback/updatemotd.png)
 
@@ -68,6 +71,8 @@ Awesome. Now we just log in before it decides to roll back our changes.
 
 And there's our flag! That's the traceback box rooted.
 
-**Thoughts:**
+## Thoughts
 
-All in all, I thought this was a neat beginner box. It was one of my first, and served to introduce to me how powerful webshells were. It also implicitly teaches that privilege escalation is often a result of misconfiguration, as opposed to some strange 0-day or other vulnerability. After all, the entire reason I got root on this box was because of a permissions misconfiguration on the motd. The box was fun, but not very difficult (it's beginner rated, what did we expect). Thanks for reading and have a good one `:)`
+All in all, I thought this was a neat beginner box. It was one of my first, and served to introduce to me how powerful webshells were. It also implicitly teaches that privilege escalation is often a result of misconfiguration, as opposed to some strange 0-day or other vulnerability. After all, the entire reason I got root on this box was because of a permissions misconfiguration on the motd. The box was fun, but not very difficult (it's beginner rated, what did we expect).
+
+Cheers, thanks for reading.

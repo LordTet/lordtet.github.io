@@ -18,14 +18,14 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Server? I hardly know her!
-email: jxh5001@rit.edu
+title: Jake's ~/
+email: jake@blockra1n.xyz
 description: >- # this means to ignore newlines until "baseurl:"
-  Security ramblings, musings, and (most importantly) writeups.
+  Place I finally decided to create to post my technological misadventures. Expect cybersecurity, malware, and other general information technologies. Your tools will teach you things you never knew you wanted to learn.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: lordtet
-github_username:  LordTet
+twitter_username: blockra1n
+github_username:  blockra1n
 
 # Build settings
 remote_theme: jekyll/minima

@@ -23,14 +23,14 @@ This is a [somewhat well documented issue](https://github.com/jekyll/jekyll/issu
 Otherwise, you can also add `gem "webrick", "~>VERSION"` to your Gemfile (where VERSION is the library version).
 
 ## Problem #2 - json
-This one was odd, because I'm pretty sure the `json` library is part of the standard libraries for ruby. Either way, it manifested for me, and the fix was simple. If `bundle exec` complains, throw `gem "json", ">=VERSION"` into your genfile works.
+This one was odd, because I'm pretty sure the `json` library is part of the standard libraries for ruby. Either way, it manifested for me, and the fix was simple. If `bundle exec` complains, throw `gem "json", ">=VERSION"` into your gemfile works.
 
 Note, if the json library updates in an unpredictable way and ceases to work, consider downgrading by replacing `>=VERSION` with a more specific `~>VERSION`.
 
 ## Problem #3 - Theming
 This was something I was not going to give up lightly. The default Jekyll theme, minima, has seemingly ceased development for quite some time now. In the [repository on GitHub](https://github.com/jekyll/minima), development has seemingly halted. This includes development of a sub-theme feature of the theme, which means no dark mode for me.
 
-I've seen [others](https://blog.slowb.ro/dark-theme-for-minima-jekyll/) point to updating the Gemfile to point at the minima repository, to pull the latest changes and use the feature. This did not work for me (bundle would cite compatibility issues with GitHub Pages). Instead, I opted to create an `assets` folder for my project. This folder is unique, in that Jekyll will overwite other assets with the contents of this folder where applicable. This was handy, as I could just pull a generated assets file from `_site/`, and place it in the overwrite folder.
+I've seen [others](https://blog.slowb.ro/dark-theme-for-minima-jekyll/) point to updating the Gemfile to point at the minima repository, to pull the latest changes and use the feature. This did not work for me (bundle would cite compatibility issues with GitHub Pages). Instead, I opted to create an `assets` folder for my project. This folder is unique, in that Jekyll will overwrite other assets with the contents of this folder where applicable. This was handy, as I could just pull a generated assets file from `_site/`, and place it in the overwrite folder.
 
 It requires more knowledge of how CSS works, but it's not so bad. Modifying your own main.css is both a good exercise, and offers you a lot of fine-grain control over the looks of your site. This is how I achieved the coloring results of my page.
 

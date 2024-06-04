@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Revival Of This Site (Part 1)"
-date:   2024-01-24
+date:   2024-05-30
 categories: [news, meta, personal]
 ---
 

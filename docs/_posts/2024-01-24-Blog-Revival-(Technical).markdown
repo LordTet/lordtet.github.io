@@ -1,13 +1,13 @@
 ---
 layout: post
 title:  "Revival Of This Site (Part 2)"
-date:   2024-01-24
+date:   2024-05-30
 categories: [news, meta, technical]
 ---
 
 
 # Introduction
-As referenced in part 1, I'm trying to bring this site back from the dead. That, of course, did not come without its share of technical issues, which I will now reserruct my site by talking about.
+As referenced in part 1, I'm trying to bring this site back from the dead. That, of course, did not come without its share of technical issues, which I will now resurrect my site by talking about.
 
 Notably, this section will lack many screenshots. Being so focused on fixing the actual blog, I neglected that it would be a great post! I hope the text is sufficient, I'll keep it short ;). 
 
